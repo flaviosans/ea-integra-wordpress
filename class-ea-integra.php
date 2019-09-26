@@ -19,8 +19,8 @@ class EA_Integra{
 
 	public function eablender_budget_scripts(){
 
-		wp_enqueue_style( "ea-integra-styles", plugin_dir_url(__FILE__ ) . 'css/styles.css', null, null, false );
-		wp_enqueue_style( "ea-integra-default-css", plugin_dir_url(__FILE__ ) . 'css/mini-default.min.css', null, null, false );
+	     wp_enqueue_style( "ea-integra-styles", plugin_dir_url(__FILE__ ) . 'css/styles.css', null, null, false );
+		 wp_enqueue_style( "ea-integra-default-css", plugin_dir_url(__FILE__ ) . 'css/mini-default.min.css', null, null, false );
 
 		wp_enqueue_script( 'ea-integra-core', plugin_dir_url( __FILE__ ) . 'js/core.js', null, null, true );
 		wp_enqueue_script( 'ea-integra-inputmask', plugin_dir_url( __FILE__ ) . 'js/inputmask.js', null, null, true );
