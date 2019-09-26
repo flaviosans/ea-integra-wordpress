@@ -14,13 +14,13 @@
     display: none !important;
 }
 
-.ea-step {
-    padding: 20px 0 0 0;
-}
-
 .ea-container {
     height: 700px;
     position: relative;
+}
+
+.ea-step-title {
+    padding: 0.75em 0 0;
 }
 
 .ea-step-content {
@@ -29,7 +29,9 @@
 
 .ea-step-footer {
     position: absolute;
-    bottom: 0;
+
+    bottom: 0px;
+    right: 0px;
 }
 
 .ea-field[type="radio"] {
