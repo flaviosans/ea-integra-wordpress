@@ -10,12 +10,26 @@
     display: none !important;
 }
 
+.ea-hidden-input {
+    display: none !important;
+}
+
+.ea-step {
+    padding: 20px 0 0 0;
+}
+
+.ea-container {
+    height: 700px;
+    position: relative;
+}
+
 .ea-step-content {
-    margin: 20px 0 0;
+
 }
 
 .ea-step-footer {
-    margin: 20px 0 0;
+    position: absolute;
+    bottom: 0;
 }
 
 .ea-field[type="radio"] {

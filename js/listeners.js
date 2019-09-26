@@ -125,7 +125,7 @@ let zipcodemask = new Inputmask("99999-999", {
     placeholder: "",
   "oncomplete": function (e) {
         const cep = e.target.inputmask.unmaskedvalue();
-        findCep(cep);
+        findCity(cep);
   }, "onincomplete": function (e) {
         setCityFields({});
   }, "oncleared": function () {

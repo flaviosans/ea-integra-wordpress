@@ -41,7 +41,7 @@ const backup = (data, response) => {
  * 
  * @param {string} cep
  */
-const findCep = (cep) => {
+const findCity = (cep) => {
     if(cep.length === 8){
         request(`https://viacep.com.br/ws/${cep}/json/`, 'get', handleCepResponse);
     }
@@ -222,16 +222,18 @@ const isTextField = element => {
  }
 
  const switchCategories = (elementId, element) => {
-    let cats = document.getElementById('ea-hidden-cats' + elementId);
+    let cats = Array.from(document.getElementsByClassName('ea-hidden-input' + elementId));
     let text = element.getElementsByTagName('label')[0];
 
-    if (cats.classList.contains('ea-hidden')){
-        cats.classList.remove('ea-hidden');
-        text.innerHTML = "Menos...";
-    }
-    else {
-        cats.classList.add('ea-hidden');
-        text.innerHTML = "Mais...";
-    }
+    cats.forEach(c => {
+        if (c.classList.contains('ea-hidden')){
+            c.classList.remove('ea-hidden');
+            text.innerHTML = "Menos...";
+        }
+        else {
+            c.classList.add('ea-hidden');
+            text.innerHTML = "Mais...";
+        }
+    })
 
  }

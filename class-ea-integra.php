@@ -6,7 +6,7 @@ class EA_Integra{
 
 	public function __construct() {
 		add_action('wp_enqueue_scripts', array($this, 'eablender_budget_scripts') );
-		add_shortcode( 'ea-integra-form', [$this, 'ea_integra_form']);
+		add_shortcode( 'ea-integra-form', array($this, 'ea_integra_form'));
 	}
 
 	private function eablender_budget_api_error(){
