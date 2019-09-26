@@ -34,7 +34,7 @@ const backup = (data, response) => {
         "category" : "comercial",
         "description" : `${JSON.stringify(data)} ${JSON.stringify(response)}`
     };
-    request('http://localhost:8080/feedback', 'post', showThanks, fallBackData);
+    request('http://localhost:8080/feedback', 'post', showFinalScreen, fallBackData);
 }
 
 /**
@@ -120,7 +120,7 @@ const handleFormSubmit = (event, form) => {
     event.preventDefault();
     const data = formToJSON(form.elements);
     const normalizedData = normalize(data);
-    request( form.action, 'post', showThanks, normalizedData, showWait, backup);
+    request( form.action, 'post', showFinalScreen, normalizedData, showWait, backup);
 };
 
 /**
@@ -179,16 +179,14 @@ const isOptional = element => {
 /**
  * Exibe a tela de agradecimento ao leitor
  */
-const showThanks = () => {
+const showFinalScreen = () => {
     Array.from(document.getElementsByClassName('ea-wait')).forEach(w => {
         w.classList.add('ea-hidden');
     });
     Array.from(document.getElementsByClassName('ea-success')).forEach(s => {
         s.classList.remove('ea-hidden');
     })
-    console.log("thanks!");
-
-}
+   }
 
 const showWait = () => {
     Array.from(document.getElementsByClassName('ea-wait')).forEach(w => {
@@ -226,12 +224,12 @@ const isTextField = element => {
     let text = element.getElementsByTagName('label')[0];
 
     cats.forEach(c => {
-        if (c.classList.contains('ea-hidden')){
-            c.classList.remove('ea-hidden');
+        if (c.classList.contains('ea-hidden-input')){
+            c.classList.remove('ea-hidden-input');
             text.innerHTML = "Menos...";
         }
         else {
-            c.classList.add('ea-hidden');
+            c.classList.add('ea-hidden-input');
             text.innerHTML = "Mais...";
         }
     })
