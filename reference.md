@@ -21,12 +21,13 @@ Cada `fieldset` possui um elemento com a classe `ea-warning`, esse elemento ser�
 
 ###Validação
 
+
 Cada `fieldset` valida seus próprios campos. Para ser validado, o `input` ou  `textarea` deve
 conter a classe `ea-field`.
 
 ###Esconder/mostrar botões adicionais
  Insira um elemento chamando a função `switchCategories(%unique_id%, this)`. Os elementos que iniciam escondidos devem conter as
- classes `ea-input-hidden` e `ea-input-hidden%unique_id%`
+ classes `ea-input-hidden` e `ea-input-hidden%unique_id%`.
 
 Para utilizar a funcionalidade de esconder/mostrar botões adicionais, 
 
