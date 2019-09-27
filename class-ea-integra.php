@@ -5,7 +5,7 @@ class EA_Integra{
 	protected $api;
 
 	public function __construct() {
-		add_action('wp_enqueue_scripts', array($this, 'register_scripts_and_styles' ) );
+		add_action('wp_enqueue_scripts', array($this, 'register_scripts_and_styles' ), 0 );
 		add_shortcode( 'ea-integra-form', array($this, 'load_form' ));
 	}
 
@@ -32,7 +32,7 @@ class EA_Integra{
 	    $this->load_scripts_and_styles();
 		$value = shortcode_atts( ['header' => 'false'], $atts );
 		ob_start();
-		include(plugin_dir_path( __FILE__ ) . 'ea-form.php');
+		include(plugin_dir_path( __FILE__ ) . 'static-form.php');
 		return ob_get_clean();
 	}
 }

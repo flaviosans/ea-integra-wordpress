@@ -12,7 +12,8 @@
     --universal-padding: .5rem;
     --universal-border-radius: .125rem;
     --a-link-color: #0277bd;
-    --a-visited-color: #01579b
+    --a-visited-color: #01579b;
+    --ea-main-color: #000000
 }
 
 details {
@@ -86,6 +87,10 @@ p {
     display: flex;
     flex: 0 1 auto;
     flex-flow: row wrap
+}
+
+.row-ea-integra.ea-step-footer {
+    position: relative;
 }
 
 .col-sm, [class^='col-sm-'], [class^='col-sm-offset-'], .row[class*='cols-sm-'] > * {
@@ -489,7 +494,92 @@ p {
 }
 
 :root {
-    --form-back-color: #FAFAFA;
+    --card-back-color: #f8f8f8;
+    --card-fore-color: #111;
+    --card-border-color: #ddd
+}
+
+.ea-integra-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    position: relative;
+    background: var(--card-back-color);
+    color: var(--card-fore-color);
+    border: .0625rem solid var(--card-border-color);
+    border-radius: var(--universal-border-radius);
+    margin: var(--universal-margin);
+    overflow: hidden
+}
+
+@media screen and (min-width: 320px) {
+    .ea-integra-card {
+        max-width: 90%
+    }
+}
+
+.ea-integra-card > .section {
+    background: var(--card-back-color);
+    color: var(--card-fore-color);
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    border-bottom: .0625rem solid var(--card-border-color);
+    padding: var(--universal-padding);
+    width: 100%
+}
+
+.ea-integra-card > .section.media {
+    height: 200px;
+    padding: 0;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.ea-integra-card > .section:last-child {
+    border-bottom: 0
+}
+
+@media screen and (min-width: 240px) {
+    .ea-integra-card.small {
+        max-width: 240px
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .ea-integra-card.large {
+        max-width: 480px
+    }
+}
+
+.ea-integra-card.fluid {
+    max-width: 100%;
+    width: auto
+}
+
+.ea-integra-card.warning {
+    --card-back-color: #ffca28;
+    --card-border-color: #e8b825
+}
+
+.ea-integra-card.error {
+    --card-back-color: #b71c1c;
+    --card-fore-color: #f8f8f8;
+    --card-border-color: #a71a1a
+}
+
+.ea-integra-card > .section.dark {
+    --card-back-color: #e0e0e0
+}
+
+.ea-integra-card > .section.double-padded {
+    padding: calc(1.5 * var(--universal-padding))
+}
+
+:root {
+    --form-back-color: #ffffff;
     --form-fore-color: #111;
     --form-border-color: #ddd;
     --input-back-color: #f8f8f8;
@@ -499,13 +589,15 @@ p {
     --input-invalid-color: #d32f2f;
     --button-back-color: #e2e2e2;
     --button-hover-back-color: #dcdcdc;
-    --button-fore-color: #212121;
+    --button-fore-color: #000000;
     --button-border-color: rgba(0, 0, 0, 0);
     --button-hover-border-color: rgba(0, 0, 0, 0);
     --button-group-border-color: rgba(124, 124, 124, 0.54)
 }
 
-
+form.ea-integra {
+    z-index:1050;
+}
 
 fieldset.ea-integra {
     border: .0625rem solid var(--form-border-color);
@@ -514,7 +606,15 @@ fieldset.ea-integra {
     padding: var(--universal-padding);
     background-color: var(--form-back-color);
     min-width: 281px;
+    min-height: 500px;
 }
+
+@media screen and (max-width: 380px) {
+    fieldset.ea-integra {
+        width: 100%;
+    }
+}
+
 
 legend.ea-integra {
     box-sizing: border-box;
@@ -526,7 +626,8 @@ legend.ea-integra {
 }
 
 label.ea-integra {
-    padding: calc(var(--universal-padding) / 2) var(--universal-padding)
+    padding: calc(var(--universal-padding) / 2) var(--universal-padding);
+    color: var(--ea-main-color);
 }
 
 .input-group {
@@ -657,8 +758,9 @@ button.ea-integra, [type="button"], [type="submit"], [type="reset"], a.button-ea
     border: .0625rem solid var(--button-border-color);
     border-radius: var(--universal-border-radius);
     padding: var(--universal-padding) calc(1.5 * var(--universal-padding));
-    margin: var(--universal-margin);
+    margin: var(--universal-margin)
     text-decoration: none !important;
+    font-weight: 400;
     cursor: pointer;
     transition: background 0.3s
 }
@@ -827,132 +929,7 @@ nav .sublink-2:before {
 }
 
 
-:root {
-    --table-border-color: #aaa;
-    --table-border-separator-color: #666;
-    --table-head-back-color: #e6e6e6;
-    --table-head-fore-color: #111;
-    --table-body-back-color: #f8f8f8;
-    --table-body-fore-color: #111;
-    --table-body-alt-back-color: #eee
-}
 
-table.horizontal {
-    border: 0
-}
-
-table.horizontal thead, table.horizontal tbody {
-    border: 0;
-    flex: .2 0 0;
-    flex-flow: row nowrap
-}
-
-table.horizontal tbody {
-    overflow: auto;
-    justify-content: space-between;
-    flex: .8 0 0;
-    margin-left: 0;
-    padding-bottom: calc(var(--universal-padding) / 4)
-}
-
-table.horizontal tr {
-    flex-direction: column;
-    flex: 1 0 auto
-}
-
-table.horizontal th, table.horizontal td {
-    width: auto;
-    border: 0;
-    border-bottom: .0625rem solid var(--table-border-color)
-}
-
-table.horizontal th:not(:first-child), table.horizontal td:not(:first-child) {
-    border-top: 0
-}
-
-table.horizontal th {
-    text-align: right;
-    border-left: .0625rem solid var(--table-border-color);
-    border-right: .0625rem solid var(--table-border-separator-color)
-}
-
-table.horizontal thead tr:first-child {
-    padding-left: 0
-}
-
-table.horizontal th:first-child, table.horizontal td:first-child {
-    border-top: .0625rem solid var(--table-border-color)
-}
-
-table.horizontal tbody tr:last-child td {
-    border-right: .0625rem solid var(--table-border-color)
-}
-
-table.horizontal tbody tr:last-child td:first-child {
-    border-top-right-radius: 0.25rem
-}
-
-table.horizontal tbody tr:last-child td:last-child {
-    border-bottom-right-radius: 0.25rem
-}
-
-table.horizontal thead tr:first-child th:first-child {
-    border-top-left-radius: 0.25rem
-}
-
-table.horizontal thead tr:first-child th:last-child {
-    border-bottom-left-radius: 0.25rem
-}
-
-:root {
-    --table-body-alt-back-color: #eee
-}
-
-table.striped tr:nth-of-type(2n) > td {
-    background: var(--table-body-alt-back-color)
-}
-
-@media screen and (max-width: 768px) {
-    table.striped tr:nth-of-type(2n) {
-        background: var(--table-body-alt-back-color)
-    }
-}
-
-:root {
-    --table-body-hover-back-color: #90caf9
-}
-
-table.hoverable tr:hover, table.hoverable tr:hover > td, table.hoverable tr:focus, table.hoverable tr:focus > td {
-    background: var(--table-body-hover-back-color)
-}
-
-@media screen and (max-width: 768px) {
-    table.hoverable tr:hover, table.hoverable tr:hover > td, table.hoverable tr:focus, table.hoverable tr:focus > td {
-        background: var(--table-body-hover-back-color)
-    }
-}
-
-:root {
-    --mark-back-color: #0277bd;
-    --mark-fore-color: #fafafa
-}
-
-:root {
-    --toast-back-color: #424242;
-    --toast-fore-color: #fafafa
-}
-
-.toast {
-    position: fixed;
-    bottom: calc(var(--universal-margin) * 3);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1111;
-    color: var(--toast-fore-color);
-    background: var(--toast-back-color);
-    border-radius: calc(var(--universal-border-radius) * 16);
-    padding: var(--universal-padding) calc(var(--universal-padding) * 3)
-}
 
 :root {
     --tooltip-back-color: #212121;
@@ -963,6 +940,71 @@ table.hoverable tr:hover, table.hoverable tr:hover > td, table.hoverable tr:focu
     --modal-overlay-color: rgba(0, 0, 0, 0.45);
     --modal-close-color: #444;
     --modal-close-hover-color: #f0f0f0
+}
+
+[type="checkbox"].modal {
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%)
+}
+
+[type="checkbox"].modal + div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: var(--modal-overlay-color)
+}
+
+[type="checkbox"].modal + div .ea-integra-card {
+    margin: 0 auto;
+
+    overflow: auto
+}
+
+[type="checkbox"].modal + div .ea-integra-card .modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--universal-border-radius);
+    padding: var(--universal-padding);
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.3s
+}
+
+[type="checkbox"].modal + div .ea-integra-card .modal-close:before {
+    display: block;
+    content: '\00D7';
+    color: var(--modal-close-color);
+    position: relative;
+    font-family: sans-serif;
+    font-size: 1.75rem;
+    line-height: 1;
+    text-align: center
+}
+
+[type="checkbox"].modal + div .ea-integra-card .modal-close:hover, [type="checkbox"].modal + div .ea-integra-card .modal-close:focus {
+    background: var(--modal-close-hover-color)
+}
+
+[type="checkbox"].modal:checked + div {
+    display: flex;
+    flex: 0 1 auto;
+    z-index: 1200
+}
+
+[type="checkbox"].modal:checked + div .ea-integra-card .modal-close {
+    z-index: 1211
 }
 
 :root {

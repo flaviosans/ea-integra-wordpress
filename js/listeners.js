@@ -12,8 +12,8 @@ let EaForm = function(steps){
 
 EaForm.prototype.init = function() {
   for(let i = 0; i < this.steps.length; i++){
-    if(i !== 0)
-      this.steps[i].style.display = 'none';
+    if(i === 0)
+      this.steps[i].style.display = 'inline';
   }
 }
 

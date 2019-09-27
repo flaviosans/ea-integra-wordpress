@@ -15,10 +15,16 @@
 }
 
 .ea-container {
-    height: 700px;
-    position: relative;
+
 }
 
+.button-ea-integra.primary.ea-next-button {
+    position: absolute;
+    right: 0;
+}
+.ea-step {
+    height: 100%;
+}
 .ea-step-title {
     padding: 0.75em 0 0;
 }
@@ -28,10 +34,7 @@
 }
 
 .ea-step-footer {
-    position: absolute;
-
-    bottom: 0px;
-    right: 0px;
+    margin: 1rem;
 }
 
 .ea-field[type="radio"] {
@@ -42,7 +45,7 @@
     color: #ffffff !important;
 }
 .ea-full-width-item {
-    width: 80%;
+    width: 100%;
 }
 
 input.ea-field, textarea.ea-field {

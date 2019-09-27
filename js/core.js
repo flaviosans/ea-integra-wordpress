@@ -34,7 +34,7 @@ const backup = (data, response) => {
         "category" : "comercial",
         "description" : `${JSON.stringify(data)} ${JSON.stringify(response)}`
     };
-    request('http://localhost:8080/feedback', 'post', showFinalScreen, fallBackData);
+    request(feedbackApi, 'post', showFinalScreen, fallBackData);
 }
 
 /**
