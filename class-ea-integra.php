@@ -5,31 +5,32 @@ class EA_Integra{
 	protected $api;
 
 	public function __construct() {
-		add_action('wp_enqueue_scripts', array($this, 'eablender_budget_scripts') );
-		add_shortcode( 'ea-integra-form', array($this, 'ea_integra_form'));
+		add_action('wp_enqueue_scripts', array($this, 'register_scripts_and_styles' ) );
+		add_shortcode( 'ea-integra-form', array($this, 'load_form' ));
 	}
 
-	private function eablender_budget_api_error(){
-		?>
-		<div class="notice notice-warning">
-			<p><?php _e( 'EABlender Pages: EABlender API parece não estar presente' ); ?></p>
-		</div>
-		<?php
+	public function register_scripts_and_styles(){
+
+		wp_register_script( 'ea-integra-core', plugin_dir_url( __FILE__ ) . 'js/core.js', null, null, true );
+		wp_register_script( 'ea-integra-inputmask', plugin_dir_url( __FILE__ ) . 'js/inputmask.js', null, null, true );
+		wp_register_script( 'ea-integra-listeners', plugin_dir_url( __FILE__ ) . 'js/listeners.js', null, null, true );
+
+		wp_register_style( "ea-integra-styles", plugin_dir_url(__FILE__ ) . 'css/styles.css', null, null, false );
+		wp_register_style( "ea-integra-default-css", plugin_dir_url(__FILE__ ) . 'css/mini-default.min.css', null, null, false );
 	}
 
-	public function eablender_budget_scripts(){
+    public function load_scripts_and_styles(){
+	    wp_enqueue_style('ea-integra-styles');
+	    wp_enqueue_style('ea-integra-default-css');
 
-	     wp_enqueue_style( "ea-integra-styles", plugin_dir_url(__FILE__ ) . 'css/styles.css', null, null, false );
-		 wp_enqueue_style( "ea-integra-default-css", plugin_dir_url(__FILE__ ) . 'css/mini-default.min.css', null, null, false );
+	    wp_enqueue_script('ea-integra-core');
+	    wp_enqueue_script('ea-integra-inputmask');
+	    wp_enqueue_script('ea-integra-listeners');
+    }
 
-		wp_enqueue_script( 'ea-integra-core', plugin_dir_url( __FILE__ ) . 'js/core.js', null, null, true );
-		wp_enqueue_script( 'ea-integra-inputmask', plugin_dir_url( __FILE__ ) . 'js/inputmask.js', null, null, true );
-		wp_enqueue_script( 'ea-integra-listeners', plugin_dir_url( __FILE__ ) . 'js/listeners.js', null, null, true );
-	}
-
-	function ea_integra_form($atts = []){
+	function load_form($atts = []){
+	    $this->load_scripts_and_styles();
 		$value = shortcode_atts( ['header' => 'false'], $atts );
-		$show = $value['header'];
 		ob_start();
 		include(plugin_dir_path( __FILE__ ) . 'ea-form.php');
 		return ob_get_clean();
