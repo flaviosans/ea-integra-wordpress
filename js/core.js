@@ -82,6 +82,10 @@ const setCityFields = (data) => {
     Array.from(document.getElementsByName('city.ibge')).forEach(v =>{
         v.value = data.ibge || '';
     });
+
+    Array.from(document.getElementsByClassName('ea-city-label')).forEach(l => {
+        l.innerHTML = `${data.localidade || ''} - ${data.uf || ''}`;
+    });
   }
 }
 
