@@ -14,7 +14,7 @@
   $css_prev_button = $css_default_button;
   $css_next_button = $css_primary_button . " ea-next-button";
 
-  $css_h3 = "ea-integra";
+  $css_h3 = "ea-integra " . $css_full_col;
 
   $css_full_col = "col-md-12 col-sm-12";
   $css_half_col = "col-lg-6 col-md-6 col-sm-12";
@@ -41,7 +41,7 @@
 <div class="<?php echo $css_row ?>">
     <div class="<?php echo $css_center_wide ?>">
         <form class="ea-integra" action="<?php echo $api_url ?>/budget" id="ea-form<?php echo $unique_id ?>" method="POST" onsubmit="handleFormSubmit(event, this)">
-            <fieldset class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra" >
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra" >
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">Onde será feito o trabalho?</h3>
@@ -96,7 +96,7 @@
                                 <div class="<?php echo $css_row ?> ea-step-footer">
                                     <div class="<?php echo $css_center ?>">
                                         <div class="<?php echo $css_form_group ?>">
-                                            <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>//')"><?php echo $prev_message ?></a>
+                                            <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
                                             <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </fieldset>
-            <fieldset style="display: none" class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">O orçamento que você deseja se encaixa em qual categoria?</h3>
@@ -177,7 +177,7 @@
                 </div>
 
             </fieldset>
-            <fieldset style="display: none" class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">Qual é o tipo de imóvel?</h3>
@@ -218,7 +218,7 @@
 
                 </div>
             </fieldset>
-            <fieldset style="display: none" class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">Quando pretende começar?</h3>
@@ -263,7 +263,7 @@
                 </div>
 
             </fieldset>
-            <fieldset style="display: none" class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">Queremos saber um pouco mais sobre seu pedido</h3>
@@ -281,21 +281,21 @@
                             <textarea class="ea-field <?php echo $css_form_control ?>" name="description" placeholder="Adicione os detalhes que você gostaria de explicar para o profissional. Quanto mais informações, melhor e mais rápida será a resposta!"></textarea>
                         </div>
 
-                                                    <div class="<?php /*echo $css_full_col */?>">
-                                <div class="<?php /*echo $css_row */?> ea-step-footer">
-                                    <div class="<?php /*echo $css_center */?>">
-                                        <div class="<?php /*echo $css_form_group */?>">
-                                            <a class="<?php /*echo $css_prev_button */?>" onclick="prev('step<?php /*echo $unique_id */?>')"><?php /*echo $prev_message */?></a>
-                                            <a class="<?php /*echo $css_next_button */?>" onclick="validateStep('step<?php /*echo $unique_id */?>')"><?php /*echo $next_message */?></a>
-                                        </div>
+                        <div class="<?php echo $css_full_col ?>">
+                            <div class="<?php echo $css_row ?> ea-step-footer">
+                                <div class="<?php echo $css_center ?>">
+                                    <div class="<?php echo $css_form_group ?>">
+                                        <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
+                                        <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
 
                 </div>
             </fieldset>
-            <fieldset style="display: none" class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">Melhor horário para contato:</h3>
@@ -351,7 +351,7 @@
 
                 </div>
             </fieldset>
-            <fieldset style="display: none" class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">Interesse:</h3>
@@ -382,7 +382,7 @@
                         <h3 class="<?php echo $css_h3 ?>">Estimativa de investimento:</h3>
                         <div class="ea-warning">Confira os campos</div>
                     </div>
-                    <div class="ea-step-content">
+                    <div class="ea-step-content <?php echo $css_full_col ?>">
                         <div class="<?php echo $css_row ?>">
                             <div class="<?php echo $css_radio_grid ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="est1<?php echo $unique_id ?>" class="ea-field" type="radio" name="estimatedPrice" value="1">
@@ -421,7 +421,7 @@
                 </div>
                 <button class="ea-hidden ea-button ea-submit" type="submit" value="Vai cachorro">
             </fieldset>
-            <fieldset style="display: none" class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title">
                         <div class="ea-wait">

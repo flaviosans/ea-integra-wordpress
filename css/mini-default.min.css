@@ -607,11 +607,17 @@ fieldset.ea-integra {
     background-color: var(--form-back-color);
     min-width: 281px;
     min-height: 500px;
+    display: none;
+}
+
+.ea-hiding {
+    opacity: 0 !important;
 }
 
 @media screen and (max-width: 380px) {
     fieldset.ea-integra {
         width: 100%;
+        opacity: 1;
     }
 }
 

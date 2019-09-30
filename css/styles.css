@@ -30,6 +30,10 @@
     height: 105px;
 }
 
+span.ea-warning {
+    text-align: center;
+}
+
 .ea-step-content {
     height: 100%;
 }

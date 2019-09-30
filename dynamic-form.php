@@ -31,6 +31,11 @@ $css_radio_grid = "col-sm-12 col-md-6";
 $css_form_control = "form-control";
 
 $css_container = "container ea-container";
+
+$step = [
+        "step_title" => "Onde será feito o trabalho?",
+        "question_fields" => ["tag" => "input","type" => "hidden","name" => "meta.refererId", "value" => $referer_id ]
+];
 ?>
 <div class="container">
 	<div class="<?php echo $css_center ?>">
@@ -39,12 +44,16 @@ $css_container = "container ea-container";
 				<fieldset class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra" >
 					<div class="<?php echo $css_row ?>">
 						<div class="ea-step-title <?php echo $css_full_col ?>">
-							<h3 class="<?php echo $css_h3 ?>">Onde será feito o trabalho?</h3>
+							<h3 class="<?php echo $css_h3 ?>"><?php echo $step["step_title"] ?></h3>
 							<span class="ea-warning">Alguns campos precisam ser preenchidos</span>
 						</div>
 						<div class="ea-step-content <?php echo $css_full_col ?>">
 							<div class="<?php echo $css_row ?>">
-								<input type="hidden" name="meta.refererId" value="<?php echo $referer_id ?>">
+								<?php foreach($step["question_fields"] as $cada) { ?>
+                                    <input type="<?php echo $cada[type] ?>" name="<?php echo $cada[name] ?>" value="<?php echo $cada[value] ?>">
+                                <?php } ?>
+
+
 								<input type="hidden" name="meta.city.ibge"  class="ea-field ea-optional-field" id="ibge<?php echo $unique_id ?>" value="000000">
 								<input type="hidden" name="city" class="ea-field ea-optional-field <?php echo $css_form_control ?>" id="city<?php echo $unique_id ?>">
 								<input type="hidden" name="state" class="ea-field ea-optional-field  <?php echo $css_form_control ?>" id="state<?php echo $unique_id ?>">
