@@ -12,13 +12,18 @@ let EaForm = function(steps){
 
 EaForm.prototype.init = function() {
   for(let i = 0; i < this.steps.length; i++){
-    if(i === 0)
-      this.steps[i].style.display = 'inline';
+    if(i === 0){
+      // this.steps[i].style.display = 'inline';
+
+        this.steps[i].classList.add('ea-showing');
+
+    }
   }
 }
 
 EaForm.prototype.hide = function() {
-  this.steps[this.stepIndex].style.display = 'none';
+  this.steps[this.stepIndex].classList.remove('ea-showing');
+
 }
 
 EaForm.prototype.showNext = function() {
@@ -37,7 +42,8 @@ EaForm.prototype.walk = function(step) {
     }
     if(this.stepIndex < 0 )
       this.stepIndex = this.steps.length - 1;
-    this.steps[this.stepIndex].style.display = 'inline';
+
+    this.steps[this.stepIndex].classList.add('ea-showing');
 }
 
 EaForm.prototype.showErrors = function() {

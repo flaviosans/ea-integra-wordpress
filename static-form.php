@@ -39,7 +39,7 @@
 </script>
 
 <div class="<?php echo $css_row ?>">
-    <div class="<?php echo $css_center_wide ?>">
+    <div class="<?php echo $css_center_wide ?>" style="height: 600px">
         <form class="ea-integra" action="<?php echo $api_url ?>/budget" id="ea-form<?php echo $unique_id ?>" method="POST" onsubmit="handleFormSubmit(event, this)">
             <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra" >
                 <div class="<?php echo $css_row ?>">
@@ -50,6 +50,7 @@
                     <div class="ea-step-content <?php echo $css_full_col ?>">
                         <div class="<?php echo $css_row ?>">
                             <input type="hidden" name="meta.refererId" value="<?php echo $referer_id ?>">
+                            <input type="hidden" name="deleted" value="true">
                             <input type="hidden" name="meta.city.ibge"  class="ea-field ea-optional-field" id="ibge<?php echo $unique_id ?>" value="000000">
                             <input type="hidden" name="city" class="ea-field ea-optional-field <?php echo $css_form_control ?>" id="city<?php echo $unique_id ?>">
                             <input type="hidden" name="state" class="ea-field ea-optional-field  <?php echo $css_form_control ?>" id="state<?php echo $unique_id ?>">
@@ -143,6 +144,7 @@
                                     Paisagismo e Jardinagem
                                 </label>
                             </div>
+                            <?php /*
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.5<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="5">
                                 <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.5<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
@@ -154,7 +156,8 @@
                                 <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.6<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
                                     Projetos em geral
                                 </label>
-                            </div>
+                            </div> */
+                            ?>
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.7<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="7">
                                 <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.7<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">

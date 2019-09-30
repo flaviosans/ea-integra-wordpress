@@ -596,7 +596,7 @@ p {
 }
 
 form.ea-integra {
-    z-index:1050;
+    position: relative;
 }
 
 fieldset.ea-integra {
@@ -606,18 +606,32 @@ fieldset.ea-integra {
     padding: var(--universal-padding);
     background-color: var(--form-back-color);
     min-width: 281px;
-    min-height: 500px;
-    display: none;
+    min-height: 600px;
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 220ms;
+    -moz-transition: opacity 220ms;
+    -o-transition: opacity 220ms;
+    transition: opacity 220ms;
 }
 
-.ea-hiding {
-    opacity: 0 !important;
+
+.ea-showing {
+    opacity: 1 !important;
+    z-index: 2 !important;
 }
 
 @media screen and (max-width: 380px) {
     fieldset.ea-integra {
         width: 100%;
-        opacity: 1;
+
     }
 }
 
