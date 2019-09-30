@@ -117,19 +117,19 @@
                             <div class="<?php echo $css_radio_grid ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" class="ea-field" id="budgetCategory.id.1<?php echo $unique_id ?>" type="radio" name="budgetCategory.id" value="1">
                                 <label  onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.1<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
-                                    Label 1
+                                    Construção
                                 </label>
                             </div>
                             <div class="<?php echo $css_radio_grid ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" class="ea-field" id="budgetCategory.id.2<?php echo $unique_id ?>" type="radio" name="budgetCategory.id" value="2">
                                 <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.2<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
-                                    Label 2
+                                    Reforma
                                 </label>
                             </div>
                             <div class="<?php echo $css_radio_grid ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" class="ea-field" id="budgetCategory.id.3<?php echo $unique_id ?>" type="radio" name="budgetCategory.id" value="3">
                                 <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.3<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
-                                    Label 3
+                                    Decoração
                                 </label>
                             </div>
                             <div onclick="switchCategories('<?php echo $unique_id ?>', this)" class="<?php echo $css_radio_grid ?>">
@@ -139,26 +139,50 @@
                             </div>
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.4<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="4">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.4<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">Complementar</label>
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.4<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Paisagismo e Jardinagem
+                                </label>
                             </div>
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.5<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="5">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.5<?php echo $unique_id ?>" class="<?php echo $css_radio ?>"> Outro complementar
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.5<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Loteamento
                                 </label>
                             </div>
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.6<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="6">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.6<?php echo $unique_id ?>" class="<?php echo $css_radio ?>"> Mais um complementar
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.6<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Projetos em geral
                                 </label>
                             </div>
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.7<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="7">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.7<?php echo $unique_id ?>" class="<?php echo $css_radio ?>"> Another
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.7<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Instalações e serviços
                                 </label>
                             </div>
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.8<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="8">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.8<?php echo $unique_id ?>" class="<?php echo $css_radio ?>"> One more time
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.8<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Pavimentação
+                                </label>
+                            </div>
+                            <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
+                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.9<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="9">
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.9<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Mudanças
+                                </label>
+                            </div>
+                            <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
+                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.10<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="10">
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.10<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Reparos e serviços
+                                </label>
+                            </div>
+                            <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
+                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.11<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="11">
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.11<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Outros
                                 </label>
                             </div>
 <!--                            <div class="<?php /*echo $css_full_col */?>">
