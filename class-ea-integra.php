@@ -23,9 +23,9 @@ class EA_Integra{
 	    wp_enqueue_style('ea-integra-styles');
 	    wp_enqueue_style('ea-integra-default-css');
 
-	    wp_enqueue_script('ea-integra-core');
 	    wp_enqueue_script('ea-integra-inputmask');
 	    wp_enqueue_script('ea-integra-listeners');
+	    wp_enqueue_script('ea-integra-core');
     }
 
 	function load_form($atts = []){

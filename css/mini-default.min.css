@@ -758,7 +758,7 @@ button.ea-integra, [type="button"], [type="submit"], [type="reset"], a.button-ea
     border: .0625rem solid var(--button-border-color);
     border-radius: var(--universal-border-radius);
     padding: var(--universal-padding) calc(1.5 * var(--universal-padding));
-    margin: var(--universal-margin)
+    margin: var(--universal-margin);
     text-decoration: none !important;
     font-weight: 400;
     cursor: pointer;
