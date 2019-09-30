@@ -11,9 +11,9 @@ class EA_Integra{
 
 	public function register_scripts_and_styles(){
 
-		wp_register_script( 'ea-integra-core', plugin_dir_url( __FILE__ ) . 'js/core.js', null, null, true );
 		wp_register_script( 'ea-integra-inputmask', plugin_dir_url( __FILE__ ) . 'js/inputmask.js', null, null, true );
 		wp_register_script( 'ea-integra-listeners', plugin_dir_url( __FILE__ ) . 'js/listeners.js', null, null, true );
+		wp_register_script( 'ea-integra-core', plugin_dir_url( __FILE__ ) . 'js/core.js', null, null, true );
 
 		wp_register_style( "ea-integra-styles", plugin_dir_url(__FILE__ ) . 'css/styles.css', null, null, false );
 		wp_register_style( "ea-integra-default-css", plugin_dir_url(__FILE__ ) . 'css/mini-default.min.css', null, null, false );
