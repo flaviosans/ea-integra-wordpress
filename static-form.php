@@ -21,8 +21,8 @@
   $css_ever_half_col = "col-lg-6 col-md-6 col-sm-6";
   $css_third_col = "col-lg-4 col-md-4 col-sm-12";
   $css_sixth_col = "col-lg-2 col-md-2 col-sm-12";
-  $css_center = "col-sm-6 col-sm-offset-3";
-  $css_center_wide = "col-sm-8 col-sm-offset-2";
+  $css_center = "col-sm-12 col-md-6 col-md-offset-3";
+  $css_center_wide = "col-sm-12 col-md-8 col-md-offset-2";
   // Div do Input do formulário
   $css_form_group = "form-group-ea-integra";
   $css_button_group = $css_form_group;
@@ -45,7 +45,7 @@
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">Onde será feito o trabalho?</h3>
-                        <span class="ea-warning">Alguns campos precisam ser preenchidos</span>
+                        <span class="ea-warning">Confira os campos</span>
                     </div>
                     <div class="ea-step-content <?php echo $css_full_col ?>">
                         <div class="<?php echo $css_row ?>">
@@ -61,43 +61,10 @@
                                     <input type="text" name="zipCode" class="ea-field ea-masked-zipcode <?php echo $css_form_control ?>">
                                 </div>
                             </div>
-
-                            <!--                    <div class="<?php /*echo $css_half_col */?>">
-                                <div class="<?php /*echo $css_form_group */?>">
-                                    <label for="city">Cidade:</label>
-                                    <input type="text" name="city" class="ea-field ea-optional-field <?php /*echo $css_form_control */?>" id="city<?php /*echo $unique_id */?>">
-                                </div>
-                            </div>
-
-                            <div class="<?php /*echo $css_sixth_col */?>">
-                                <div class="<?php /*echo $css_form_group */?>">
-                                    <label for="state">Estado:</label>
-                                    <input type="text" name="state" class="ea-field ea-optional-field  <?php /*echo $css_form_control */?>" id="state<?php /*echo $unique_id */?>">
-                                </div>
-                            </div>-->
-                            <div class="<?php echo $css_full_col ?>">
-                                <div class="<?php echo $css_form_group ?>">
-                                    <label class="ea-integra" for="userApp.name" >Nome:</label>
-                                    <input type="text" name="userApp.name" class="ea-field <?php echo $css_form_control ?>"/>
-                                </div>
-                            </div>
-                            <div class="<?php echo $css_full_col ?>">
-                                <div class="<?php echo $css_form_group ?>">
-                                    <label class="ea-integra" for="userApp.email">E-mail:</label><br>
-                                    <input type="text" name="userApp.email" class="ea-field ea-masked-email <?php echo $css_form_control ?>"/>
-                                </div>
-                            </div>
-                            <div class="<?php echo $css_full_col ?>">
-                                <div class="<?php echo $css_form_group ?>">
-                                    <label class="ea-integra" for="userApp.phone">Telefone:</label><br>
-                                    <input type="text" name="userApp.phone" class="ea-field ea-masked-phone  <?php echo $css_form_control ?>">
-                                </div>
-                            </div>
                             <div class="<?php echo $css_full_col ?>">
                                 <div class="<?php echo $css_row ?> ea-step-footer">
                                     <div class="<?php echo $css_center ?>">
                                         <div class="<?php echo $css_form_group ?>">
-                                            <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
                                             <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
                                         </div>
                                     </div>
@@ -110,7 +77,7 @@
             <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
-                        <h3 class="<?php echo $css_h3 ?>">O orçamento que você deseja se encaixa em qual categoria?</h3>
+                        <h3 class="<?php echo $css_h3 ?>">O seu orçamento se encaixa em qual categoria?</h3>
                         <span class="ea-warning">Escolha ao menos uma categoria</span>
                     </div>
                     <div class="ea-step-content <?php echo $css_full_col ?>">
@@ -170,34 +137,30 @@
                                     Pavimentação
                                 </label>
                             </div>
-                            <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
-                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.9<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="9">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.9<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
-                                    Mudanças
-                                </label>
-                            </div>
+                            <?php /*          
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.10<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="10">
                                 <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.10<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
                                     Reparos e serviços
                                 </label>
                             </div>
+                             */ ?>
                             <div class="<?php echo $css_radio_grid ?> ea-hidden-input ea-hidden-input<?php echo $unique_id ?>">
                                 <input onclick="validateStep('step<?php echo $unique_id ?>')" id="budgetCategory.id.11<?php echo $unique_id ?>" class="ea-field" type="radio" name="budgetCategory.id" value="11">
                                 <label onclick="validateStep('step<?php echo $unique_id ?>')" for="budgetCategory.id.11<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
                                     Outros
                                 </label>
                             </div>
-<!--                            <div class="<?php /*echo $css_full_col */?>">
-                                <div class="<?php /*echo $css_row */?> ea-step-footer">
-                                    <div class="<?php /*echo $css_center */?>">
-                                        <div class="<?php /*echo $css_form_group */?>">
-                                            <a class="<?php /*echo $css_prev_button */?>" onclick="prev('step<?php /*echo $unique_id */?>')"><?php /*echo $prev_message */?></a>
-                                            <a class="<?php /*echo $css_next_button */?>" onclick="validateStep('step<?php /*echo $unique_id */?>')"><?php /*echo $next_message */?></a>
+                            <div class="<?php echo $css_full_col ?>">
+                                <div class="<?php echo $css_row ?> ea-step-footer">
+                                    <div class="<?php echo $css_center ?>">
+                                        <div class="<?php echo $css_form_group ?>">
+                                            <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
+                                            <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>
                         </div>
                         <input class="ea-field" type="hidden" name="budgetSubCategory.id" value="79">
                     </div>
@@ -230,16 +193,16 @@
                                 <label onclick="validateStep('step<?php echo $unique_id ?>')" for="propType4<?php echo $unique_id ?>" class="<?php echo $css_radio ?>"> Outro</label>
                             </div>
 
-<!--                            <div class="<?php /*echo $css_full_col */?>">
-                                <div class="<?php /*echo $css_row */?> ea-step-footer">
-                                    <div class="<?php /*echo $css_center */?>">
-                                        <div class="<?php /*echo $css_form_group */?>">
-                                            <a class="<?php /*echo $css_prev_button */?>" onclick="prev('step<?php /*echo $unique_id */?>')"><?php /*echo $prev_message */?></a>
-                                            <a class="<?php /*echo $css_next_button */?>" onclick="validateStep('step<?php /*echo $unique_id */?>')"><?php /*echo $next_message */?></a>
+                            <div class="<?php echo $css_full_col ?>">
+                                <div class="<?php echo $css_row ?> ea-step-footer">
+                                    <div class="<?php echo $css_center ?>">
+                                        <div class="<?php echo $css_form_group ?>">
+                                            <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
+                                            <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>
                         </div>
                     </div>
 
@@ -274,16 +237,16 @@
                                 </label>
                             </div>
 
-<!--                            <div class="<?php /*echo $css_full_col */?>">
-                                <div class="<?php /*echo $css_row */?> ea-step-footer">
-                                    <div class="<?php /*echo $css_center */?>">
-                                        <div class="<?php /*echo $css_form_group */?>">
-                                            <a class="<?php /*echo $css_prev_button */?>" onclick="prev('step<?php /*echo $unique_id */?>')"><?php /*echo $prev_message */?></a>
-                                            <a class="<?php /*echo $css_next_button */?>" onclick="validateStep('step<?php /*echo $unique_id */?>')"><?php /*echo $next_message */?></a>
+                            <div class="<?php echo $css_full_col ?>">
+                                <div class="<?php echo $css_row ?> ea-step-footer">
+                                    <div class="<?php echo $css_center ?>">
+                                        <div class="<?php echo $css_form_group ?>">
+                                            <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
+                                            <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>
                         </div>
                     </div>
 
@@ -293,7 +256,7 @@
             <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
-                        <h3 class="<?php echo $css_h3 ?>">Queremos saber um pouco mais sobre seu pedido</h3>
+                        <h3 class="<?php echo $css_h3 ?>">Nos descreva seu pedido</h3>
                         <div class="ea-warning">Confira os campos</div>
                     </div>
 
@@ -364,47 +327,22 @@
                                 </label>
                             </div>
                         </div>
-                        <!--                            <div class="<?php /*echo $css_full_col */?>">
-                                <div class="<?php /*echo $css_row */?> ea-step-footer">
-                                    <div class="<?php /*echo $css_center */?>">
-                                        <div class="<?php /*echo $css_form_group */?>">
-                                            <a class="<?php /*echo $css_prev_button */?>" onclick="prev('step<?php /*echo $unique_id */?>')"><?php /*echo $prev_message */?></a>
-                                            <a class="<?php /*echo $css_next_button */?>" onclick="validateStep('step<?php /*echo $unique_id */?>')"><?php /*echo $next_message */?></a>
-                                        </div>
+                        <div class="<?php echo $css_full_col ?>">
+                            <div class="<?php echo $css_row ?> ea-step-footer">
+                                <div class="<?php echo $css_center ?>">
+                                    <div class="<?php echo $css_form_group ?>">
+                                        <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
+                                        <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </fieldset>
             <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
-                    <div class="ea-step-title <?php echo $css_full_col ?>">
-                        <h3 class="<?php echo $css_h3 ?>">Interesse:</h3>
-                        <div class="ea-warning">Confira os campos</div>
-                    </div>
-                    <div class="ea-step-content <?php echo $css_full_col ?>">
-                        <div class="<?php echo $css_row ?>">
-                            <div class="<?php echo $css_full_col ?>">
-                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="interest1<?php echo $unique_id ?>" class="ea-field" type="radio" name="meta.interest" value="saber_apenas_precos_a_fim_de_comparacao">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="interest1<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">Saber apenas preços a fim de comparação
-                                </label>
-                            </div>
-                            <div class="<?php echo $css_full_col ?>">
-                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="interest2<?php echo $unique_id ?>" class="ea-field" type="radio" name="meta.interest" value="tirar_duvidas_para_saber_melhor_o_que_desejo_fazer">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="interest2<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
-                                    Tirar dúvidas para saber melhor o que desejo fazer
-                                </label>
-                            </div>
-                            <div class="<?php echo $css_full_col ?>">
-                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="interest3<?php echo $unique_id ?>" class="ea-field" type="radio" name="meta.interest" value="negociar_a_execucao_do_servico_com_um_profissional">
-                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="interest3<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
-                                    Negociar a execução do serviço com um profissional
-                                </label>
-                            </div>
-                        </div>
-                    </div>
                     <div class="ea-step-title <?php echo $css_full_col ?>">
                         <h3 class="<?php echo $css_h3 ?>">Estimativa de investimento:</h3>
                         <div class="ea-warning">Confira os campos</div>
@@ -434,19 +372,96 @@
                         </div>
                     </div>
 
-                        <!--                            <div class="<?php /*echo $css_full_col */?>">
-                                <div class="<?php /*echo $css_row */?> ea-step-footer">
-                                    <div class="<?php /*echo $css_center */?>">
-                                        <div class="<?php /*echo $css_form_group */?>">
-                                            <a class="<?php /*echo $css_prev_button */?>" onclick="prev('step<?php /*echo $unique_id */?>')"><?php /*echo $prev_message */?></a>
-                                            <a class="<?php /*echo $css_next_button */?>" onclick="validateStep('step<?php /*echo $unique_id */?>')"><?php /*echo $next_message */?></a>
+                    <div class="<?php echo $css_full_col ?>">
+                        <div class="<?php echo $css_row ?> ea-step-footer">
+                            <div class="<?php echo $css_center ?>">
+                                <div class="<?php echo $css_form_group ?>">
+                                    <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
+                                    <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
+                <div class="<?php echo $css_row ?>">
+                    <div class="ea-step-title <?php echo $css_full_col ?>">
+                        <h3 class="<?php echo $css_h3 ?>">Interesse:</h3>
+                        <div class="ea-warning">Confira os campos</div>
+                    </div>
+                    <div class="ea-step-content <?php echo $css_full_col ?>">
+                        <div class="<?php echo $css_row ?>">
+                            <div class="<?php echo $css_full_col ?>">
+                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="interest1<?php echo $unique_id ?>" class="ea-field" type="radio" name="meta.interest" value="saber_apenas_precos_a_fim_de_comparacao">
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="interest1<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">Saber apenas preços a fim de comparação
+                                </label>
+                            </div>
+                            <div class="<?php echo $css_full_col ?>">
+                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="interest2<?php echo $unique_id ?>" class="ea-field" type="radio" name="meta.interest" value="tirar_duvidas_para_saber_melhor_o_que_desejo_fazer">
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="interest2<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Tirar dúvidas para saber melhor o que desejo fazer
+                                </label>
+                            </div>
+                            <div class="<?php echo $css_full_col ?>">
+                                <input onclick="validateStep('step<?php echo $unique_id ?>')" id="interest3<?php echo $unique_id ?>" class="ea-field" type="radio" name="meta.interest" value="negociar_a_execucao_do_servico_com_um_profissional">
+                                <label onclick="validateStep('step<?php echo $unique_id ?>')" for="interest3<?php echo $unique_id ?>" class="<?php echo $css_radio ?>">
+                                    Negociar a execução do serviço com um profissional
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="<?php echo $css_full_col ?>">
+                        <div class="<?php echo $css_row ?> ea-step-footer">
+                            <div class="<?php echo $css_center ?>">
+                                <div class="<?php echo $css_form_group ?>">
+                                    <a class="<?php echo $css_prev_button ?>" onclick="prev('step<?php echo $unique_id ?>')"><?php echo $prev_message ?></a>
+                                    <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra" >
+                <div class="<?php echo $css_row ?>">
+                    <div class="ea-step-title <?php echo $css_full_col ?>">
+                        <h3 class="<?php echo $css_h3 ?>">Informações de contato:</h3>
+                        <span class="ea-warning">Confira os campos</span>
+                    </div>
+                    <div class="ea-step-content <?php echo $css_full_col ?>">
+                        <div class="<?php echo $css_row ?>">
+                            <div class="<?php echo $css_full_col ?>">
+                                <div class="<?php echo $css_form_group ?>">
+                                    <label class="ea-integra" for="userApp.name" >Nome:</label>
+                                    <input type="text" name="userApp.name" class="ea-field <?php echo $css_form_control ?>"/>
+                                </div>
+                            </div>
+                            <div class="<?php echo $css_full_col ?>">
+                                <div class="<?php echo $css_form_group ?>">
+                                    <label class="ea-integra" for="userApp.email">E-mail:</label><br>
+                                    <input type="text" name="userApp.email" class="ea-field ea-masked-email <?php echo $css_form_control ?>"/>
+                                </div>
+                            </div>
+                            <div class="<?php echo $css_full_col ?>">
+                                <div class="<?php echo $css_form_group ?>">
+                                    <label class="ea-integra" for="userApp.phone">Telefone:</label><br>
+                                    <input type="text" name="userApp.phone" class="ea-field ea-masked-phone  <?php echo $css_form_control ?>">
+                                </div>
+                            </div>
+                            <div class="<?php echo $css_full_col ?>">
+                                <div class="<?php echo $css_row ?> ea-step-footer">
+                                    <div class="<?php echo $css_center ?>">
+                                        <div class="<?php echo $css_form_group ?>">
+                                            <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>-->
-
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <button class="ea-hidden ea-button ea-submit" type="submit" value="Vai cachorro">
+                <button class="ea-hidden ea-button ea-submit" type="submit" value="Vai">
             </fieldset>
             <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
