@@ -13,10 +13,7 @@ let EaForm = function(steps){
 EaForm.prototype.init = function() {
   for(let i = 0; i < this.steps.length; i++){
     if(i === 0){
-      // this.steps[i].style.display = 'inline';
-
-        this.steps[i].classList.add('ea-showing');
-
+        this.show(i);
     }
   }
 }
@@ -24,6 +21,10 @@ EaForm.prototype.init = function() {
 EaForm.prototype.hide = function() {
   this.steps[this.stepIndex].classList.remove('ea-showing');
 
+}
+
+EaForm.prototype.show = function(stepNumber) {
+  this.steps[stepNumber].classList.add('ea-showing');
 }
 
 EaForm.prototype.showNext = function() {
@@ -43,7 +44,7 @@ EaForm.prototype.walk = function(step) {
     if(this.stepIndex < 0 )
       this.stepIndex = this.steps.length - 1;
 
-    this.steps[this.stepIndex].classList.add('ea-showing');
+    this.show(this.stepIndex);
 }
 
 EaForm.prototype.showErrors = function() {
