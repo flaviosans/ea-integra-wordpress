@@ -34,7 +34,7 @@ const backup = (data, response) => {
         "category" : "comercial",
         "description" : `${JSON.stringify(data)} ${JSON.stringify(response)}`
     };
-    request(feedbackApi, 'post', showFinalScreen, fallBackData);
+    request("https://alpha.entendaantes.com.br:8443/feedback", 'post', showFinalScreen, fallBackData);
 }
 
 /**
@@ -121,6 +121,7 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
  * @param {form} form
  */
 const handleFormSubmit = (event, form) => {
+
     event.preventDefault();
     const data = formToJSON(form.elements);
     const normalizedData = normalize(data);

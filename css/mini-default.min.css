@@ -4,7 +4,7 @@
     --back-color: #f8f8f8;
     --secondary-back-color: #f0f0f0;
     --blockquote-color: #f57c00;
-    --pre-color: #1565c0;
+    --pre-color: #0579ff;
     --border-color: #aaa;
     --secondary-border-color: #ddd;
     --heading-ratio: 1.19;
@@ -605,7 +605,6 @@ fieldset.ea-integra {
     margin: calc(var(--universal-margin) / 4);
     padding: var(--universal-padding);
     background-color: var(--form-back-color);
-    min-width: 281px;
     min-height: 600px;
 
     position: absolute;
@@ -786,8 +785,9 @@ button.ea-integra, [type="button"], [type="submit"], [type="reset"], a.button-ea
 }
 
 button.ea-integra:hover, button:focus, [type="button"]:hover, [type="button"]:focus, [type="submit"]:hover, [type="submit"]:focus, [type="reset"]:hover, [type="reset"]:focus, a.button-ea-integra:hover, a.button-ea-integra:focus, label.button-ea-integra:hover, label.button-ea-integra:focus, .button-ea-integra:hover, .button-ea-integra:focus, a[role="button"]:hover, a[role="button"]:focus, label[role="button"]:hover, label[role="button"]:focus, [role="button"]:hover, [role="button"]:focus {
-    background: var(--button-hover-back-color);
-    border-color: var(--button-hover-border-color)
+    background: var(--pre-color) !important;
+    color: var(--back-color) !important;
+    border-color: var(--button-hover-border-color) !important
 }
 
 input:disabled, input[disabled], textarea:disabled, textarea[disabled], select:disabled, select[disabled], button.ea-integra:disabled, button.ea-integra[disabled], .button-ea-integra:disabled, .button-ea-integra[disabled], [role="button"]:disabled, [role="button"][disabled] {

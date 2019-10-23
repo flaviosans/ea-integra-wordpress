@@ -34,13 +34,11 @@
   $css_container = "container ea-container";
 ?>
 
-<script>
-    let feedbackApi = '<?php echo $api_url ?>/feedback';
-</script>
+
 
 <div class="<?php echo $css_row ?>">
     <div class="<?php echo $css_center_wide ?>" style="height: 600px">
-        <form class="ea-integra" action="<?php echo $api_url ?>/budget" id="ea-form<?php echo $unique_id ?>" method="POST" onsubmit="handleFormSubmit(event, this)">
+        <form name="ea-integra-form" class="ea-integra" action="<?php echo $api_url ?>/budget" id="ea-form<?php echo $unique_id ?>" method="POST" onsubmit="handleFormSubmit(event, this)">
             <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra" >
                 <div class="<?php echo $css_row ?>">
                     <div class="ea-step-title <?php echo $css_full_col ?>">
@@ -163,6 +161,7 @@
                             </div>
                         </div>
                         <input class="ea-field" type="hidden" name="budgetSubCategory.id" value="79">
+                        <input class="ea-field" type="hidden" name="userIdToSend" value="25260fdf-8ca6-4673-a227-ffe9bc9947e5">
                     </div>
                 </div>
 
@@ -461,7 +460,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="ea-hidden ea-button ea-submit" type="submit" value="Vai">
+                <button class="ea-hidden ea-button ea-submit" id="ea-submit" type="submit" value="Vai">
             </fieldset>
             <fieldset  class="ea-step step<?php echo $unique_id ?> <?php echo $css_container ?> ea-integra">
                 <div class="<?php echo $css_row ?>">
@@ -478,3 +477,25 @@
         </form>
     </div>
 </div>
+
+<script>
+  (function() {
+    var eventAction;
+    var formSelector = '#ea-form<?php echo $unique_id ?>';
+
+    window.addEventListener('beforeunload', function() {
+     if(eventAction){
+        window.dataLayer.push({
+        'event' : 'formAbandonment',
+        'eventCategory' : 'Form Abandonment',
+        'eventAction' : eventAction
+      });
+     }
+    });
+  
+    document.querySelector(formSelector).addEventListener('change', function(){
+        eventAction = true;
+    });
+    // Add actual logic here...
+  })();
+</script>
