@@ -1,8 +1,9 @@
 <?php
   $unique_id = rand(0,999);
   $referer_id = 1234567890;
-  $next_message = "Próximo";
   $prev_message = "Anterior";
+  $next_message = "Próximo";
+  $finish_message = "Finalizar";
   $api_url = "https://alpha.entendaantes.com.br:8443";
 
   // Elemento que vai conter o grid
@@ -452,7 +453,7 @@
                                 <div class="<?php echo $css_row ?> ea-step-footer">
                                     <div class="<?php echo $css_center ?>">
                                         <div class="<?php echo $css_form_group ?>">
-                                            <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $next_message ?></a>
+                                            <a class="<?php echo $css_next_button ?>" onclick="validateStep('step<?php echo $unique_id ?>')"><?php echo $finish_message ?></a>
                                         </div>
                                     </div>
                                 </div>
