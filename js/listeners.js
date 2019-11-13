@@ -15,24 +15,24 @@ EaForm.prototype.init = function() {
         this.show(i);
     }
   }
-}
+};
 
 EaForm.prototype.hide = function() {
   this.steps[this.stepIndex].classList.remove('ea-showing');
 
-}
+};
 
 EaForm.prototype.show = function(stepNumber) {
   this.steps[stepNumber].classList.add('ea-showing');
-}
+};
 
 EaForm.prototype.showNext = function() {
     this.walk(1);
-}
+};
 
 EaForm.prototype.showPrev = function() {
     this.walk(-1);
-}
+};
 
 EaForm.prototype.walk = function(step) {
     this.hide();
@@ -44,7 +44,7 @@ EaForm.prototype.walk = function(step) {
       this.stepIndex = this.steps.length - 1;
 
     this.show(this.stepIndex);
-}
+};
 
 EaForm.prototype.showErrors = function() {
   let focused = false;
@@ -59,7 +59,7 @@ EaForm.prototype.showErrors = function() {
     i.addEventListener('click', removeErrors);
     i.addEventListener('blur', removeErrors);
   });
-}
+};
 
 EaForm.prototype.validateStep = function() {
 
@@ -100,7 +100,7 @@ EaForm.prototype.validateStep = function() {
   else{
     this.showErrors();
   }
-}
+};
 
 function removeErrors(e) {
   e.target.parentElement.getElementsByTagName('label')[0].classList.remove('ea-active-warning');
@@ -180,4 +180,4 @@ Array.from(document.getElementsByClassName('ea-field')).forEach(f => {
       e.keyCode = 9;
     }
   });
-})
+});

@@ -32,7 +32,7 @@ class EA_Integra{
 	    $this->load_scripts_and_styles();
 		$value = shortcode_atts( ['header' => 'false'], $atts );
 		ob_start();
-		include(plugin_dir_path( __FILE__ ) . 'static-form.php');
+		include(plugin_dir_path( __FILE__ ) . 'dynamic-form.php');
 		return ob_get_clean();
 	}
 }

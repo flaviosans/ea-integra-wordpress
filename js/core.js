@@ -104,7 +104,7 @@ const setCityFields = (data) => {
         v.value = data.ibge || '';
     });
 
-    Array.from(document.getElementsByClassName('ea-city-label')).forEach(l => {
+    Array.from(document.getElementsByClassName('ea-city-span')).forEach(l => {
         l.innerHTML = `${data.localidade || ''} - ${data.uf || ''}`;
     });
   }
@@ -144,6 +144,7 @@ const handleFormSubmit = (event, form) => {
     event.preventDefault();
     const data = formToJSON(form.elements);
     const normalizedData = normalize(data);
+    form.reset();
     request( form.action, 'post', showFinalScreen, normalizedData, showWait, backup);
 };
 
@@ -209,7 +210,7 @@ const showFinalScreen = () => {
     });
     Array.from(document.getElementsByClassName('ea-success')).forEach(s => {
         s.classList.remove('ea-hidden');
-    })
+    });
    }
 
 const showWait = () => {
@@ -230,7 +231,7 @@ const isTextField = element => {
     return ['text', 'hidden'].includes(element.type) || element.nodeName === 'TEXTAREA';
 }
 
-/** Verifica se todos os campos do step recebido estão preenchidos.
+/** Verifica se todos os campos do steps recebido estão preenchidos.
  *
  * @param className
  */
