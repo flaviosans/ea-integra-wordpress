@@ -15,6 +15,8 @@ botões, mas contém um link que leva ao primeiro `fieldset`, para o caso de o u
 
 ## Funcionamento
 
+Basta inserir o shortcode `[ea-integra-form]` ao artigo ou às matérias, no espaço onde se deseja inserir o formulário. Em algumas plataformas, é necessário que o post esteja publicado, e não no modo "Preview".
+
 ### Validação
 
 Cada `fieldset` valida seus próprios campos. O campo deve obrigatoriamente conter a classe `ea-field` para constar na requisição final; para constar na requisição final e não ser validado, deve ter as classes `ea-field` e `ea-optional-field`. Assim que for válido, 

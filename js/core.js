@@ -1,10 +1,13 @@
 /**
  * Envia requisição HTTP para o servidor
- * @param {string} data 
- * @param {string} action 
- * @param {string} method 
+ * @param {string} data
+ * @param {string} action
+ * @param doneCallback
+ * @param {string} method
+ * @param waitCallback
+ * @param fallback
  */
-const request = (action, method, doneCallback, data = console.log, waitCallback = console.log, fallback = console.log) => {
+const request = (action, method, doneCallback, data, waitCallback = console.log, fallback = console.log) => {
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === request.DONE) {
@@ -34,7 +37,24 @@ const backup = (data, response) => {
         "category" : "comercial",
         "description" : `${JSON.stringify(data)} ${JSON.stringify(response)}`
     };
-    request("https://alpha.entendaantes.com.br:8443/feedback", 'post', showFinalScreen, fallBackData);
+
+    let normalData = `Nome: ${data.userApp.name || ''} |  
+    email: ${data.userApp.email || ''} |
+    Telefone: ${data.userApp.phone || ''} | 
+    CEP: ${data.zipCode || ''} |
+    Título: ${data.title || ''} |
+    Descrição: ${data.description || ''} |
+    Hora: ${new Date()}`;
+
+    console.log(normalData);
+    console.log(data);
+    request(
+        "https://zeta.entendaantes.com.br/feedback", 'post',
+        showFinalScreen,
+        normalData,
+        showWait(),
+        showFinalScreen()
+    );
 }
 
 /**
@@ -54,6 +74,7 @@ const findCity = (cep) => {
  */
 const handleCepResponse = (url, data) => {
     data = JSON.parse(data);
+
     if(data.erro === true){
         console.log("cep não encontrado");
         var cep = url.split("/")[4];
@@ -112,8 +133,6 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 
   return data;
 }, {});
-
-
 
 /**
  * Manipula os dados do formulário antes que ele seja enviado para a API
@@ -238,5 +257,4 @@ const isTextField = element => {
             text.innerHTML = "Mais...";
         }
     })
-
  }

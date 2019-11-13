@@ -4,14 +4,13 @@ const stepObjects = [];
 
 let EaForm = function(steps){
   this.stepIndex = 0;
-  this.fieldIndex = 0;
   this.invalids = [];
   this.steps = Array.from(steps);
   this.init();
 };
 
 EaForm.prototype.init = function() {
-  for(let i = 0; i < this.steps.length; i++){
+  for(let i = 1; i < this.steps.length; i++){
     if(i === 0){
         this.show(i);
     }
@@ -39,7 +38,7 @@ EaForm.prototype.walk = function(step) {
     this.hide();
     this.stepIndex+=step;
     if(this.stepIndex === this.steps.length){
-      this.stepIndex = 0;  
+      this.stepIndex = 0;
     }
     if(this.stepIndex < 0 )
       this.stepIndex = this.steps.length - 1;
@@ -64,7 +63,7 @@ EaForm.prototype.showErrors = function() {
 
 EaForm.prototype.validateStep = function() {
 
-  let step = this.steps[this.stepIndex], 
+  let step = this.steps[this.stepIndex],
   nodes = step.getElementsByClassName('ea-field'),
   submit = step.getElementsByClassName('ea-submit')[0];
   let checkables = [];
@@ -105,7 +104,7 @@ EaForm.prototype.validateStep = function() {
 
 function removeErrors(e) {
   e.target.parentElement.getElementsByTagName('label')[0].classList.remove('ea-active-warning');
-  
+
   Array.from(document.getElementsByClassName('ea-warning')).forEach(f => {
     f.parentElement.classList.remove('ea-active-warning');
   });
@@ -124,6 +123,10 @@ window.addEventListener('load', e => {
   for(let s in stepElements){
     stepObjects[s] = new EaForm(stepElements[s]);
   }
+
+    Array.from(document.getElementsByClassName("ea-preloader")).forEach(p =>{
+        p.classList.add("ea-hidden");
+    });
 });
 
 // Máscara de CEP
@@ -138,7 +141,7 @@ let zipcodemask = new Inputmask("99999-999", {
   }, "oncleared": function () {
         setCityFields({});
   }});
-  
+
 Array.from(document.getElementsByClassName('ea-masked-zipcode')).forEach(m => {
   zipcodemask.mask(m);
 });
@@ -152,6 +155,7 @@ Array.from(document.getElementsByClassName('ea-masked-phone')).forEach(p => {
 // Máscara de e-mail
 let emailmask = new Inputmask({
   mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+  placeholder: "",
   greedy: false,
     nullable: false,
   onBeforePaste: function (pastedValue, opts) {
